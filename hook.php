@@ -49,6 +49,7 @@ function corenominal_wp_api( $hook )
 	if( file_exists( $method ) )
 	{
 		require_once( $method );
+		exit; // prevent 404 page
 	}
 	else
 	{
