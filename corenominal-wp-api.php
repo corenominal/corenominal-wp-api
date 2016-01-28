@@ -18,3 +18,22 @@ require_once( plugin_dir_path( __FILE__ ) . 'hook.php' );
  * The main api hook
  */
 require_once( plugin_dir_path( __FILE__ ) . 'admin.php' );
+
+/**
+ * Add settings link in plugin's listing
+ */
+function corenominal_apikey_action_links( $actions, $plugin_file ) 
+{
+	static $plugin;
+
+	if (!isset($plugin))
+		$plugin = plugin_basename(__FILE__);
+	if ($plugin == $plugin_file)
+	{
+		$settings = array('settings' => '<a href="options-general.php?page=corenominal-apikey">' . __('Settings', 'General') . '</a>');
+	
+		$actions = array_merge($settings, $actions);
+	}
+	return $actions;
+}
+add_filter( 'plugin_action_links', 'corenominal_apikey_action_links', 10, 5 );
