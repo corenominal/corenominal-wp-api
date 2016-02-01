@@ -1,15 +1,11 @@
 <?php
 /**
- * Plugin activation file
- */
-
-/**
  * Set-up war demo database tables
  */
 function corenominal_create_war_tables()
 {
 	global $wpdb;
-	
+
 	$query = $wpdb->query( 'SHOW TABLES LIKE "demo_war"' );
 	if( !$query )
 	{
@@ -55,4 +51,6 @@ function corenominal_create_war_tables()
 		$query = $wpdb->query( $sql );
 	}
 }
-register_activation_hook( __FILE__, 'corenominal_create_war_tables' );
+
+corenominal_create_war_tables();
+

@@ -10,6 +10,15 @@
  */
 
 /**
+ * Plugin activation functions
+ */
+function corenominal_wp_api_activate()
+{
+	require_once( plugin_dir_path( __FILE__ ) . 'activation/db_war.php' );
+}
+register_activation_hook( __FILE__, 'corenominal_wp_api_activate' );
+
+/**
  * The main api hook
  */
 require_once( plugin_dir_path( __FILE__ ) . 'hook.php' );
