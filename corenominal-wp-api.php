@@ -19,6 +19,16 @@ function corenominal_wp_api_activate()
 register_activation_hook( __FILE__, 'corenominal_wp_api_activate' );
 
 /**
+ * Register routes/endpoints
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'endpoints.php' );
+
+/**
+ * Method: /wp-json/corenominal/ip
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'endpoints/ip.php' );
+
+/**
  * The main api hook
  */
 require_once( plugin_dir_path( __FILE__ ) . 'hook.php' );
