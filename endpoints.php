@@ -17,3 +17,13 @@ function corenominal_api_register_endpoints()
     ));
 }
 add_action( 'rest_api_init', 'corenominal_api_register_endpoints' );
+
+/**
+ * Endpoint: /wp-json/corenominal/ip
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'endpoints/ip.php' );
+
+/**
+ * Endpoint: /wp-json/corenominal/doodle_download
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'endpoints/doodle_download.php' );

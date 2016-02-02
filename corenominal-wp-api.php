@@ -24,22 +24,7 @@ register_activation_hook( __FILE__, 'corenominal_wp_api_activate' );
 require_once( plugin_dir_path( __FILE__ ) . 'endpoints.php' );
 
 /**
- * Endpoint: /wp-json/corenominal/ip
- */
-require_once( plugin_dir_path( __FILE__ ) . 'endpoints/ip.php' );
-
-/**
- * Endpoint: /wp-json/corenominal/doodle_download
- */
-require_once( plugin_dir_path( __FILE__ ) . 'endpoints/doodle_download.php' );
-
-/**
- * The main api hook
- */
-require_once( plugin_dir_path( __FILE__ ) . 'hook.php' );
-
-/**
- * The main api hook
+ * An admin screen for creating an API key
  */
 require_once( plugin_dir_path( __FILE__ ) . 'admin.php' );
 
