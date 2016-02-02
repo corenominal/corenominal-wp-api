@@ -9,5 +9,11 @@ function corenominal_api_register_endpoints()
         'methods' => 'GET',
         'callback' => 'corenominal_api_ip',
     ));
+
+    // endpoint:/wp-json/corenominal/doodle_download
+	register_rest_route( 'corenominal', '/doodle_download', array(
+        'methods' => 'GET',
+        'callback' => 'corenominal_api_doodle_download',
+    ));
 }
 add_action( 'rest_api_init', 'corenominal_api_register_endpoints' );
