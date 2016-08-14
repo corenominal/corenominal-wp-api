@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
  * Plugin Name: corenominal's WordPress API
  * Description: This is corenominal's WordPress API. It provides features specifically for corenominal, but feel free to take a look.
@@ -31,7 +32,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'admin.php' );
 /**
  * Add settings link in plugin's listing
  */
-function corenominal_apikey_action_links( $actions, $plugin_file ) 
+function corenominal_apikey_action_links( $actions, $plugin_file )
 {
 	static $plugin;
 
@@ -40,7 +41,7 @@ function corenominal_apikey_action_links( $actions, $plugin_file )
 	if ($plugin == $plugin_file)
 	{
 		$settings = array('settings' => '<a href="options-general.php?page=corenominal-apikey">' . __('Settings', 'General') . '</a>');
-	
+
 		$actions = array_merge($settings, $actions);
 	}
 	return $actions;

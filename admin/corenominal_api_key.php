@@ -1,11 +1,12 @@
 <?php
+if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
  * The default theme admin page
  */
 
 /**
  * Register custom settings
- */ 
+ */
 function corenominal_apikey_register()
 {
 	/**
@@ -15,7 +16,7 @@ function corenominal_apikey_register()
 		'corenominal_apikey_group', // option group
 		'corenominal_apikey' // option name
 		);
-	
+
 	/**
 	 * Create the settings section for this group of settings
 	 */
@@ -25,7 +26,7 @@ function corenominal_apikey_register()
 		'corenominal_apikey_section', // callback
 		'corenominal_apikey' // page
 		);
-	
+
 	/**
 	 * Add the settings fields
 	 */
@@ -34,7 +35,7 @@ function corenominal_apikey_register()
 		'API Key', // title/label
 		'corenominal_apikey', // callback
 		'corenominal_apikey', // page
-		'corenominal-apikey' // settings section 
+		'corenominal-apikey' // settings section
 		);
 }
 
@@ -85,7 +86,7 @@ function corenominal_apikey_callback()
 		<hr>
 
 		<form method="POST" action="options.php">
-			
+
 			<?php settings_fields( 'corenominal_apikey_group' ); ?>
 			<?php do_settings_sections( 'corenominal_apikey' ); ?>
 			<?php submit_button(); ?>

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
  * The admin screen for setting an API key
  */
@@ -8,7 +9,7 @@
  */
 function corenominal_api_key()
 {
-	add_submenu_page( 
+	add_submenu_page(
 		'options-general.php', // parent slug to attach to
 		'API Key', // page title
 		'API Key', // menu title

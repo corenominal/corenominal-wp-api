@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
  * Set-up war demo database tables
  */
@@ -27,8 +28,8 @@ function corenominal_create_war_tables()
 
 		$query = $wpdb->query( $sql );
 
-		$wpdb->insert('demo_war', 
-					  array( 'battles' => 0 ), 
+		$wpdb->insert('demo_war',
+					  array( 'battles' => 0 ),
 					  array( '%d' )
 					 );
 	}
@@ -53,4 +54,3 @@ function corenominal_create_war_tables()
 }
 
 corenominal_create_war_tables();
-

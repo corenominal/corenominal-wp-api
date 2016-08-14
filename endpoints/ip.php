@@ -1,11 +1,12 @@
 <?php
+if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
  * Return IP address
  */
 function corenominal_api_ip( $request_data )
 {
 	$apikey = get_option( 'corenominal_apikey', '' );
-	
+
 	$data = $request_data->get_params();
 
 	if( !isset( $data['apikey'] ) )
