@@ -59,7 +59,7 @@ function corenominal_apikey()
  */
 function corenominal_apikey_enqueue_scripts( $hook )
 {
-	if( 'settings_page_corenominal-apikey' != $hook )
+	if( 'corenominal_page_corenominal-apikey' != $hook )
 	{
 		return;
 	}
@@ -80,6 +80,8 @@ function corenominal_apikey_callback()
 	<div class="wrap">
 
 		<h1>corenominal API Plugin &mdash; Keygen</h1>
+
+		<?php settings_errors(); ?>
 
 		<p>Create and save an API Key for use within the theme. You can either create your own key, or click the "Key Gen" button (<em>recommended</em>).</p>
 
