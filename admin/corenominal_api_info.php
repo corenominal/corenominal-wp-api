@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
- * The default theme admin page
+ * The default theme admin page for detailing this plugin
  */
 
 /**
