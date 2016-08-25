@@ -1,3 +1,7 @@
 /**
  * CSS for GitHub hosted WP plugins admin page
  */
+table.plugins-list th:nth-child(3),
+table.plugins-list td:nth-child(3) {
+    text-align: right;
+}

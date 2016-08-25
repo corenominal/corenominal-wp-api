@@ -34,15 +34,15 @@ function corenominal_github_wp_plugins_callback()
 
 		<h1>corenominal API Plugin &mdash; GitHub Hosted WP Plugins</h1>
 
-		<p>TODO: plugins list to go here</p>
+		<p>WordPress plugins to check via my Python updater script.</p>
 
-        <hr>
+		<p><button class="button">Add New Plugin</button></p>
 
-        <table class="wp-list-table widefat fixed striped posts">
+        <table class="plugins-list wp-list-table widefat fixed striped posts">
         	<thead>
         		<tr>
         			<th class="manage-column column-name" scope="col">Repo Name</th>
-        			<th class="manage-column column-address" scope="col">Address</th>
+        			<th class="manage-column column-address" scope="col">Repo URL</th>
         			<th class="manage-column column-options" scope="col">Options</th>
         		</tr>
         	</thead>
