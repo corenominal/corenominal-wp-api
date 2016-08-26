@@ -15,7 +15,7 @@ if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
  */
 function corenominal_wp_api_activate()
 {
-	require_once( plugin_dir_path( __FILE__ ) . 'activation/db_war.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'activation/db.php' );
 }
 register_activation_hook( __FILE__, 'corenominal_wp_api_activate' );
 
