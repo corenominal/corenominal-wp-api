@@ -40,7 +40,7 @@ function corenominal_apikey_action_links( $actions, $plugin_file )
 		$plugin = plugin_basename(__FILE__);
 	if ($plugin == $plugin_file)
 	{
-		$settings = array('settings' => '<a href="options-general.php?page=corenominal-apikey">' . __('Settings', 'General') . '</a>');
+		$settings = array('settings' => '<a href="admin.php?page=corenominal_options">' . __('Settings', 'General') . '</a>');
 
 		$actions = array_merge($settings, $actions);
 	}
