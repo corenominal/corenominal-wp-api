@@ -5,3 +5,19 @@ table.plugins-list th:nth-child(3),
 table.plugins-list td:nth-child(3) {
     text-align: right;
 }
+
+.corenominal-api-add-plugin-form {
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.corenominal-api-add-plugin-form input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.corenominal-api-add-plugin-form button {
+    margin-bottom: 10px;
+}
