@@ -6,11 +6,25 @@ table.plugins-list td:nth-child(3) {
     text-align: right;
 }
 
+@media screen and (max-width: 782px) {
+    table.plugins-list th:nth-child(3),
+    table.plugins-list td:nth-child(3) {
+        text-align: left;
+    }
+}
+
 .corenominal-api-add-plugin-form {
     background: #f5f5f5;
     border-bottom: 1px solid #eee;
     padding: 10px;
     margin-bottom: 20px;
+    width: 60%;
+}
+
+@media screen and (max-width: 782px) {
+    .corenominal-api-add-plugin-form {
+        width: 96%;
+    }
 }
 
 .corenominal-api-add-plugin-form input {

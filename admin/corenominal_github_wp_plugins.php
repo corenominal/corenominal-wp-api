@@ -49,7 +49,7 @@ function corenominal_github_wp_plugins_callback()
         <table class="plugins-list wp-list-table widefat fixed striped posts">
         	<thead>
         		<tr>
-        			<th class="manage-column column-name" scope="col">Repo Name</th>
+        			<th class="manage-column column-name column-primary" scope="col">Repo Name</th>
         			<th class="manage-column column-address" scope="col">Repo URL</th>
         			<th class="manage-column column-options" scope="col">Options</th>
         		</tr>
