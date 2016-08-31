@@ -36,12 +36,12 @@ function corenominal_github_wp_plugins_callback()
 
 		<p>WordPress plugins to check via my Python updater script.</p>
 
-		<p><button class="button">Add New Plugin</button></p>
+		<p><button id="corenominal-api-add-plugin-button" class="button">Add New Plugin</button></p>
 
-		<div id="corenominal-api-add-plugin-form" class="corenominal-api-add-plugin-form">
+		<div id="corenominal-api-add-plugin-form" class="corenominal-api-add-plugin-form" data-apikey="<?php echo get_option( 'iewp_dashboard_links_apikey', '' ); ?>" data-endpoint-add="<?php echo site_url('/wp-json/corenominal/github-wp-plugin-add') ?>">
 			<input type="text" id="corenominal-api-repo-name" autocomplete="off" placeholder="GitHub Repo name">
 			<input type="text" id="corenominal-api-repo-url" autocomplete="off" placeholder="https://github.com/...">
-			<button id="corenominal-api-repo-save" class="button button-primary" data-endpoint="<?php echo site_url('/wp-json/corenominal/github-wp-plugin-add') ?>">Add Plugin</button>
+			<button id="corenominal-api-repo-save" class="button button-primary">Add Plugin</button>
 			<button id="corenominal-api-repo-cancel" class="button">Cancel</button>
 			<div id="corenominal-api-repo-form-notify" class="corenominal-api-repo-form-notify"></div>
 		</div>

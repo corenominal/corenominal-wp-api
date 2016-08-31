@@ -19,6 +19,7 @@ table.plugins-list td:nth-child(3) {
     padding: 10px;
     margin-bottom: 20px;
     width: 60%;
+    display: none;
 }
 
 @media screen and (max-width: 782px) {
