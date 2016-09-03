@@ -1,13 +1,68 @@
 <?php
 if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
 /**
- * Return a list of my GitHub hosted WordPress plugins
+ * CRUD operations for my GitHub hosted WordPress plugins
  */
 function corenominal_api_github_wp_plugins( $request_data )
 {
+
 	$data = $request_data->get_params();
 
-	$data = array( 'foo', 'bar', 'iewp-simple-google-analytics', 'iewp-disable-admin-bar' );
+	$apikey = get_option( 'corenominal_apikey', '' );
 
-	return $data;
+	/**
+	 * Test for existance of API key
+	 */
+	if( !isset( $data['apikey'] ) )
+  	{
+  		$data['apikey'] = false;
+  	}
+
+	/**
+	 * Test for action
+	 */
+	if( !isset( $data['action'] ) )
+ 	{
+ 		$data['error'] = 'Please provide an action';
+ 		return $data;
+ 	}
+
+	switch ( $data['action'] )
+	{
+		case 'list':
+			// TODO - query for all plugins
+			break;
+
+		case 'create':
+			if( $data['apikey'] != $apikey )
+			{
+				$data['error'] = 'Invalid API key';
+				return $data;
+			}
+
+			if( !$data['name'] || trim( $data['name'] ) == '' )
+			{
+				$data['error'] = 'Please provide the repo name';
+				return $data;
+			}
+
+			if( !$data['url'] || trim( $data['url'] ) == '' )
+			{
+				$data['error'] = 'Please provide the repo URL';
+				return $data;
+			}
+
+			global $wpdb;
+			unset( $data['action'] );
+			unset( $data['apikey'] );
+			$wpdb->insert( 'corenominal_api_wp_plugins', $data, array( '%s', '%s' ) );
+
+			return $data;
+			break;
+
+		default:
+			$data['error'] = 'Please provide an action';
+			return $data;
+			break;
+	}
 }

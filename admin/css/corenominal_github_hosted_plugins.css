@@ -36,3 +36,7 @@ table.plugins-list td:nth-child(3) {
 .corenominal-api-add-plugin-form button {
     margin-bottom: 10px;
 }
+
+.corenominal-api-repo-form-notify {
+    margin-top: 20px;
+}
