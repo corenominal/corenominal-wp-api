@@ -30,7 +30,13 @@ function corenominal_api_github_wp_plugins( $request_data )
 	switch ( $data['action'] )
 	{
 		case 'list':
-			// TODO - query for all plugins
+			global $wpdb;
+			$sql = "SELECT * FROM `corenominal_api_wp_plugins` ORDER BY `name` ASC";
+			$data['plugins'] = $wpdb->get_results( $sql, ARRAY_A );
+			$data['num_rows'] = $wpdb->num_rows;
+			unset( $data['action'] );
+			unset( $data['apikey'] );
+			return $data;
 			break;
 
 		case 'create':
