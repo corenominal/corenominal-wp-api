@@ -15,8 +15,22 @@ jQuery(document).ready(function($){
 		})
 		.done(function( data )
 		{
-			console.log( data );
-			//TODO - refresh table with data
+			console.log( data.num_rows );
+			var plugins = '';
+			if( data.num_rows == 0 )
+			{
+				plugins = '<tr><td colspan="3">No plugins found!</td></tr>';
+			}
+			else
+			{
+				$.each(data.plugins, function(i, plugin)
+				{
+					plugins += '<tr><td>' + plugin.name + '</td>';
+	        		plugins += '<td>' + plugin.url + '</td>';
+					plugins += '<td><button data-id="' + plugin.id + '" class="button">Remove</button></td></tr>';
+				});
+			}
+			$( '#the-list' ).html( plugins );
 		})
 		.fail(function()
 		{
@@ -62,7 +76,6 @@ jQuery(document).ready(function($){
 
 		if( $( this ).hasClass( 'disabled' ) )
 		{
-			console.log( 'Nothing to do here, please move along ...' )
 			return;
 		}
 
@@ -95,6 +108,7 @@ jQuery(document).ready(function($){
 				$( '#corenominal-api-repo-url' ).val( '' );
 				var message = '<div id="message" class="updated notice"><p>Plugin added to list!</p></div>';
 				$( '#corenominal-api-repo-form-notify' ).html( message );
+				get_wp_plugins_list();
 			}
 		})
 		.fail(function()

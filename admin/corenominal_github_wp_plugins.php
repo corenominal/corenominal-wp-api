@@ -56,21 +56,7 @@ function corenominal_github_wp_plugins_callback()
         	</thead>
 
         	<tbody id="the-list">
-        		<tr>
-        			<td class="" id="">corenominal-wp-api</td>
-        			<td class="" id="">https://github.com/corenominal/corenominal-wp-api</td>
-        			<td class="" id=""><button class="button">Remove</button></td>
-        		</tr>
-        		<tr>
-        			<td class="" id="">corenominal-wp-api</td>
-        			<td class="" id="">https://github.com/corenominal/corenominal-wp-api</td>
-        			<td class="" id=""><button class="button">Remove</button></td>
-        		</tr>
-        		<tr>
-        			<td class="" id="">corenominal-wp-api</td>
-        			<td class="" id="">https://github.com/corenominal/corenominal-wp-api</td>
-        			<td class="" id=""><button class="button">Remove</button></td>
-        		</tr>
+        		<tr><td colspan="3">Loading plugins ...</td></tr>
         	</tbody>
         </table>
 
