@@ -40,3 +40,13 @@ table.plugins-list td:nth-child(3) {
 .corenominal-api-repo-form-notify {
     margin-top: 20px;
 }
+
+.remove-plugin-prompt {
+    display: none;
+    margin-top: 6px;
+}
+
+.remove-plugin-prompt span {
+    display: inline-block;
+    margin: 6px 10px 0 0;
+}

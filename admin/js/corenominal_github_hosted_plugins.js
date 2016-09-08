@@ -15,7 +15,6 @@ jQuery(document).ready(function($){
 		})
 		.done(function( data )
 		{
-			console.log( data.num_rows );
 			var plugins = '';
 			if( data.num_rows == 0 )
 			{
@@ -27,7 +26,14 @@ jQuery(document).ready(function($){
 				{
 					plugins += '<tr><td>' + plugin.name + '</td>';
 	        		plugins += '<td>' + plugin.url + '</td>';
-					plugins += '<td><button data-id="' + plugin.id + '" class="button">Remove</button></td></tr>';
+					plugins += '<td class="corenominal-api-remove-plugin-cell' + plugin.id + '">';
+					plugins += '<button data-id="' + plugin.id + '" class="button corenominal-api-remove-plugin-button">Remove</button>';
+					plugins += '<div class="remove-plugin-prompt remove-plugin-prompt' + plugin.id + '">';
+					plugins += '<span>Are you sure?</span>';
+					plugins += '<button data-id="' + plugin.id + '" class="button">Yes</button> ';
+					plugins += '<button data-id="' + plugin.id + '" class="button remove-plugin-prompt-no">No</button>';
+					plugins += '</div>';
+					plugins += '</td></tr>';
 				});
 			}
 			$( '#the-list' ).html( plugins );
@@ -118,6 +124,23 @@ jQuery(document).ready(function($){
 
 		$( this ).removeClass('disabled');
 
+	});
+
+	/**
+	 * Remove plugin from list
+	 */
+	$( document ).on( 'click', '.corenominal-api-remove-plugin-button', function( e )
+	{
+		e.preventDefault();
+		var id = $( this ).attr( 'data-id' );
+		$( '.remove-plugin-prompt' ).not( '.remove-plugin-prompt' + id ).slideUp();
+		$( '.remove-plugin-prompt' + id ).slideToggle();
+	});
+
+	$( document ).on( 'click', '.remove-plugin-prompt-no', function( e )
+	{
+		e.preventDefault();
+		$( '.remove-plugin-prompt' ).slideUp();
 	});
 
 });
