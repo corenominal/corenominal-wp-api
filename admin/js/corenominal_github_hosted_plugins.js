@@ -30,7 +30,7 @@ jQuery(document).ready(function($){
 					plugins += '<button data-id="' + plugin.id + '" class="button corenominal-api-remove-plugin-button">Remove</button>';
 					plugins += '<div class="remove-plugin-prompt remove-plugin-prompt' + plugin.id + '">';
 					plugins += '<span>Are you sure?</span>';
-					plugins += '<button data-id="' + plugin.id + '" class="button">Yes</button> ';
+					plugins += '<button data-id="' + plugin.id + '" class="button remove-plugin-prompt-yes">Yes</button> ';
 					plugins += '<button data-id="' + plugin.id + '" class="button remove-plugin-prompt-no">No</button>';
 					plugins += '</div>';
 					plugins += '</td></tr>';
@@ -141,6 +141,34 @@ jQuery(document).ready(function($){
 	{
 		e.preventDefault();
 		$( '.remove-plugin-prompt' ).slideUp();
+	});
+
+	$( document ).on( 'click', '.remove-plugin-prompt-yes', function( e )
+	{
+		e.preventDefault();
+		var endpoint = $( '#corenominal-api-add-plugin-form' ).data( 'endpoint-add' );
+		var data = {
+			action: 'delete',
+			id: $( this ).attr( 'data-id' ),
+            apikey: $( '#corenominal-api-add-plugin-form' ).data( 'apikey' )
+        };
+		$.ajax(
+		{
+			url: endpoint,
+			type: 'GET',
+			dataType: 'json',
+			data: data
+		})
+		.done(function( data )
+		{
+			var plugins = '<tr><td colspan="3">Refreshing plugins ...</td></tr>';
+			$( '#the-list' ).html( plugins );
+			get_wp_plugins_list();
+		})
+		.fail(function()
+		{
+			console.log("OH NOES! AJAX error");
+		});
 	});
 
 });

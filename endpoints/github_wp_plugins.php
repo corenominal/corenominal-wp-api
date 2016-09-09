@@ -66,6 +66,21 @@ function corenominal_api_github_wp_plugins( $request_data )
 			return $data;
 			break;
 
+		case 'delete':
+			if( $data['apikey'] != $apikey )
+			{
+				$data['error'] = 'Invalid API key';
+				return $data;
+			}
+
+			global $wpdb;
+			$wpdb->delete( 'corenominal_api_wp_plugins', array( 'id' => $data['id'] ), array( '%d' ) );
+
+			unset( $data['action'] );
+			unset( $data['apikey'] );
+			return $data;
+			break;
+
 		default:
 			$data['error'] = 'Please provide an action';
 			return $data;
