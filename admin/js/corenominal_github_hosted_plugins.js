@@ -25,7 +25,7 @@ jQuery(document).ready(function($){
 				$.each(data.plugins, function(i, plugin)
 				{
 					plugins += '<tr><td>' + plugin.name + '</td>';
-	        		plugins += '<td>' + plugin.url + '</td>';
+	        		plugins += '<td><a href="' + plugin.url + '" target="_blank">' + plugin.url + '</a></td>';
 					plugins += '<td class="corenominal-api-remove-plugin-cell' + plugin.id + '">';
 					plugins += '<button data-id="' + plugin.id + '" class="button corenominal-api-remove-plugin-button">Remove</button>';
 					plugins += '<div class="remove-plugin-prompt remove-plugin-prompt' + plugin.id + '">';
