@@ -48,9 +48,9 @@ function corenominal_api_info_callback()
 			<h3>/wp-json/corenominal/pwgen</h3>
 			<p>
 				<strong>method</strong> GET<br>
-				<strong>@param</strong> bool $capitalize include at least one capital letter in the password<br>
-				<strong>@param</strong> bool $numerals include at least one number in the password<br>
-				<strong>@param</strong> bool $symbols include at least one special symbol in the password<br>
+				<strong>@param</strong> bool(0/1) $capitalize include at least one capital letter in the password<br>
+				<strong>@param</strong> bool(0/1) $numerals include at least one number in the password<br>
+				<strong>@param</strong> bool(0/1) $symbols include at least one special symbol in the password<br>
 				<strong>@param</strong> int $length password length<br>
 			</p>
 		</div>
