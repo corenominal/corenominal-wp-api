@@ -4,6 +4,22 @@ if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
  * The default theme admin page for detailing this plugin
  */
 
+ /**
+  * Enqueue additional CSS and JavaScript
+  */
+ function corenominal_api_info_scripts( $hook )
+ {
+	if( 'toplevel_page_corenominal_api_info' != $hook )
+ 	{
+ 		return;
+ 	}
+
+ 	wp_register_style( 'corenominal_api_info_css', plugin_dir_url( __FILE__ ) . 'css/corenominal_api_info.css', array(), '0.0.1', 'all' );
+ 	wp_enqueue_style( 'corenominal_api_info_css' );
+
+ }
+ add_action( 'admin_enqueue_scripts', 'corenominal_api_info_scripts' );
+
 /**
  * Output the page
  */
@@ -20,12 +36,24 @@ function corenominal_api_info_callback()
 
 		<h2>Endpoints</h2>
 
-		<h3>/wp-json/corenominal/ip</h3>
+		<div class="endpoint postbox">
+			<h3>/wp-json/corenominal/ip</h3>
+			<p>
+				<strong>method</strong> GET<br>
+				<strong>@param</strong> string $apikey the api key<br>
+			</p>
+		</div>
 
-		<p>
-			<strong>method</strong> GET<br>
-			<strong>@param</strong> string $apikey the api key<br>
-		</p>
+		<div class="endpoint postbox">
+			<h3>/wp-json/corenominal/pwgen</h3>
+			<p>
+				<strong>method</strong> GET<br>
+				<strong>@param</strong> bool $capitalize include at least one capital letter in the password<br>
+				<strong>@param</strong> bool $numerals include at least one number in the password<br>
+				<strong>@param</strong> bool $symbols include at least one special symbol in the password<br>
+				<strong>@param</strong> int $symbols password length<br>
+			</p>
+		</div>
 
 
 	</div>
