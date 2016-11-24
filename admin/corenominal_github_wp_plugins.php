@@ -20,7 +20,6 @@ function corenominal_github_wp_plugins_scripts( $hook )
 	wp_register_script( 'corenominal_github_hosted_plugins_js', plugin_dir_url( __FILE__ ) . 'js/corenominal_github_hosted_plugins.js', array('jquery'), '0.0.1', true );
 	wp_enqueue_script( 'corenominal_github_hosted_plugins_js' );
 
-	wp_enqueue_media();
 }
 add_action( 'admin_enqueue_scripts', 'corenominal_github_wp_plugins_scripts' );
 
