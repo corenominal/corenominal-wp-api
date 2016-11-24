@@ -9,7 +9,7 @@ if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
  */
 function corenominal_github_wp_plugins_scripts( $hook )
 {
-	if( 'corenominal_page_corenominal-github-wp-plugins' != $hook )
+	if( 'corenominal-api_page_corenominal-github-wp-plugins' != $hook )
 	{
 		return;
 	}
