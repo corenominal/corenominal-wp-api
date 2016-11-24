@@ -15,10 +15,18 @@ function corenominal_api_pwgen( $request_data )
 	{
 		$cmd = $cmd . ' --capitalize';
 	}
+	else
+	{
+		$cmd = $cmd . ' --no-capitalize';
+	}
 
 	if( isset( $data['numerals'] ) && $data['numerals'] )
 	{
 		$cmd = $cmd . ' --numerals';
+	}
+	else
+	{
+		$cmd = $cmd . ' --no-numerals';
 	}
 
 	if( isset( $data['symbols'] ) && $data['symbols'] )
