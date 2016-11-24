@@ -11,6 +11,12 @@ function corenominal_api_register_endpoints()
         'callback' => 'corenominal_api_ip',
 		'show_in_index' => false,
     ));
+	// endpoint:/wp-json/corenominal/pwgen
+	register_rest_route( 'corenominal', '/pwgen', array(
+        'methods' => 'GET',
+        'callback' => 'corenominal_api_pwgen',
+		'show_in_index' => false,
+    ));
 	// endpoint:/wp-json/corenominal/wp-version
 	register_rest_route( 'corenominal', '/wp-version', array(
         'methods' => 'GET',
@@ -30,5 +36,6 @@ add_action( 'rest_api_init', 'corenominal_api_register_endpoints' );
  * Include endpoints for the above registrations
  */
 require_once( plugin_dir_path( __FILE__ ) . 'endpoints/ip.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'endpoints/pwgen.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'endpoints/wp_version.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'endpoints/github_wp_plugins.php' );
