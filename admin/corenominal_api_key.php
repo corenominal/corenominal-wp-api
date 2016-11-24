@@ -84,7 +84,7 @@ function corenominal_apikey_callback()
 		<?php settings_errors(); ?>
 
 		<p>Create and save an API Key for use within the theme. You can either create your own key, or click the "Key Gen" button (<em>recommended</em>).</p>
-
+		<p><strong>IMPORTANT: </strong>never reveal your key!</p>
 		<hr>
 
 		<form method="POST" action="options.php">

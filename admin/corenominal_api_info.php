@@ -30,7 +30,7 @@ function corenominal_api_info_callback()
 
 		<h1>corenominal API Plugin &mdash; Information</h1>
 
-		<p>See below for information about the features included in this plugin.</p>
+		<p>See below for information about the endpoints included in this plugin.</p>
 
 		<hr>
 
