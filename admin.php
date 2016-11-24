@@ -12,7 +12,7 @@ function corenominal_api_admin_options()
 	// Add top level page
 	add_menu_page(
 		'corenominal API Info', // page title
-		'corenominal', // menu title
+		'corenominal API', // menu title
 		'manage_options', // capability
 		'corenominal_api_info', // slug
 		'corenominal_api_info_callback', // callback
