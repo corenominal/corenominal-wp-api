@@ -68,6 +68,18 @@ function corenominal_api_info_callback()
 			</ul>
 		</div>
 
+        <div class="endpoint postbox">
+			<h3>/wp-json/corenominal/github-wp-plugins</h3>
+			<ul>
+				<li><strong>method</strong> GET</li>
+				<li><strong>@param</strong> string $apikey the api key</li>
+                <li><strong>@param</strong> string $action </li>
+                <ul>
+                    <li>['list'] return json list of plugins, does not require $apikey</li>
+                </ul>
+			</ul>
+		</div>
+
 
 	</div>
 	<?php
