@@ -51,7 +51,7 @@ function corenominal_api_info_callback()
 				<strong>@param</strong> bool $capitalize include at least one capital letter in the password<br>
 				<strong>@param</strong> bool $numerals include at least one number in the password<br>
 				<strong>@param</strong> bool $symbols include at least one special symbol in the password<br>
-				<strong>@param</strong> int $symbols password length<br>
+				<strong>@param</strong> int $length password length<br>
 			</p>
 		</div>
 
