@@ -4,3 +4,7 @@
 .endpoint {
     padding: 10px 20px;
 }
+
+.endpoint ul ul {
+    margin-left: 60px;
+}

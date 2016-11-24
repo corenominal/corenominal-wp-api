@@ -38,21 +38,34 @@ function corenominal_api_info_callback()
 
 		<div class="endpoint postbox">
 			<h3>/wp-json/corenominal/ip</h3>
-			<p>
-				<strong>method</strong> GET<br>
-				<strong>@param</strong> string $apikey the api key<br>
-			</p>
+			<ul>
+				<li><strong>method</strong> GET</li>
+				<li><strong>@param</strong> string $apikey the api key</li>
+			</ul>
+		</div>
+
+        <div class="endpoint postbox">
+			<h3>/wp-json/corenominal/wp-version</h3>
+			<ul>
+				<li><strong>method</strong> GET</li>
+				<li><strong>@param</strong> string $apikey the api key</li>
+                <li><strong>@param</strong> string $output </li>
+                <ul>
+                    <li>['svg'] output as svg image</li>
+                    <li>['json'] output as json</li>
+                </ul>
+			</ul>
 		</div>
 
 		<div class="endpoint postbox">
 			<h3>/wp-json/corenominal/pwgen</h3>
-			<p>
-				<strong>method</strong> GET<br>
-				<strong>@param</strong> bool(0/1) $capitalize include at least one capital letter in the password<br>
-				<strong>@param</strong> bool(0/1) $numerals include at least one number in the password<br>
-				<strong>@param</strong> bool(0/1) $symbols include at least one special symbol in the password<br>
-				<strong>@param</strong> int $length password length<br>
-			</p>
+			<ul>
+				<li><strong>method</strong> GET</li>
+				<li><strong>@param</strong> bool(0/1) $capitalize include at least one capital letter in the password</li>
+				<li><strong>@param</strong> bool(0/1) $numerals include at least one number in the password</li>
+				<li><strong>@param</strong> bool(0/1) $symbols include at least one special symbol in the password</li>
+				<li><strong>@param</strong> int $length password length</li>
+			</ul>
 		</div>
 
 
