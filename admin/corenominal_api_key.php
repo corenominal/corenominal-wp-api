@@ -59,7 +59,7 @@ function corenominal_apikey()
  */
 function corenominal_apikey_enqueue_scripts( $hook )
 {
-	if( 'corenominal_page_corenominal-apikey' != $hook )
+	if( 'corenominal-api_page_corenominal-apikey' != $hook )
 	{
 		return;
 	}
