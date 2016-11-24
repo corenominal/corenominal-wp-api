@@ -26,7 +26,7 @@ function corenominal_api_pwgen( $request_data )
 		$cmd = $cmd . ' --symbols';
 	}
 
-	if( isset( $data['length'] ) && $data['length'] )
+	if( isset( $data['length'] ) && is_numeric( $data['length'] ) && $data['length'] > 0 )
 	{
 		$cmd = $cmd . ' ' . $data['length'];
 	}
