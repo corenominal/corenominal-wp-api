@@ -5,7 +5,6 @@ if ( ! defined( 'WPINC' ) ) { die('Direct access prohibited!'); }
  */
 function corenominal_api_pwgen( $request_data )
 {
-	$apikey = get_option( 'corenominal_apikey', '' );
 
 	$data = $request_data->get_params();
 
